@@ -1,0 +1,79 @@
+<html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Лабораторная работа №1</title>
+            <link rel="stylesheet" type="text/css" href="laba_style.css" />
+            <script src="scripts.js"></script>
+            <script src="validation.js"></script>
+        </head>
+
+        <body>
+
+        <div id="container">
+            <div id="header">
+                Соколова Анастасия Денисовна (Вариант №201017)
+            </div>
+
+            <div id="condition">
+                <img align="right" position="absolute" src="graphic.jpg">
+                <p>Для проверки попадания точки в данную
+                    область введите данные ниже и нажмите на кнопку.</p>
+                <p class="explanation"> (Область обозначена синим цветом на графике.) </p>
+            </div>
+            <form  name='information' onSubmit="return formValidation(); "action="hit_check.php" method="get">
+                <div>
+                    <div id="numberX">
+                        <h2>Введите <i>X:</i></h2>
+                        <p id="output">Выберите значение</p>
+                        <input type="button" name="x" onclick="changeText(this.value)" value="-5">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="-4">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="-3">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="-2">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="-1">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="0">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="1">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="2">
+                        <input type="button" name="x" onclick="changeText(this.value)" value="3">
+                    </div>
+
+        <div id="numberY">
+            <h2>Введите <i>Y:</i></h2>
+            <p><input type="text" name="y" size="30" placeholder="Введите число в диапозоне (-3;5)"></p>
+        </div>
+
+        <div id="numberR">
+            <h2>Введите <i>R:</i></h2>
+            <input type="radio" id="choice1"
+            name="r" value="r">
+            <label for="choice1">1</label>
+
+            <input type="radio" id="choice2"
+                      name="r" value="r">
+                <label for="choice2">1.5</label>
+
+            <input type="radio" id="choice3"
+                      name="r" value="r">
+                <label for="choice3">2</label>
+
+            <input type="radio" id="choice4"
+                      name="r" value="r">
+                <label for="choice4">2.5</label>
+
+            <input type="radio" id="choice5"
+                      name="r" value="r">
+                <label for="choice5">3</label>
+        </div>
+
+        <div id="clear">
+
+        <div id="footer">
+            <input type='submit' class='submit' value='Проверить'/>
+        </div>
+        </div>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>

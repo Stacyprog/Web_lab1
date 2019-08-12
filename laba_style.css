@@ -1,0 +1,71 @@
+body {
+    background: #A9D0F5;
+    color: #151515;
+    font-family: Trebuchet MS, Arial, Times New Roman;
+    font-size: 12px;
+}
+
+p {
+    font-size: 15px;
+}
+
+p.explanation {
+    color: navy;
+    margin-left: 20px;
+    border-left: 1px solid navy;
+    padding-left: 15px;
+}
+
+h2 {
+    color: black;
+}
+
+h2 i {
+    color: red;
+}
+
+#container {
+    background:#E0ECF8;
+    margin: 30px auto;
+    width: 900px;
+    height: 945px;
+    padding: 5%;
+}
+
+#header {
+    height: 100px;
+    width: 900px;
+    font-family: cursive;
+    color: purple;
+    font-size: 30px;
+    text-align: center;
+}
+
+#condition {
+    width: 900px;
+    height: 400px;
+}
+
+#numberX {
+    width: 900px;
+    height: 100px;
+}
+
+#numberY {
+    width: 900px;
+    height: 100px;
+}
+
+#numberR {
+    width: 900px;
+    height: 100px;
+}
+
+#footer {
+    height: 100px;
+    width: 900px;
+}
+
+#clear {
+    clear: both;
+}
