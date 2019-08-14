@@ -13,14 +13,9 @@ function formValidation()
 
 function y_validation(y,min,max)
 {
-    var y_val = y.value;
+    var y_value = y.value.replace(",", ".");
     var y_len = y.value.length;
-    var y_value;
-    if (y_val.indexOf(",") != -1) {
-        y_value = y_val.replace(",", ".")
-    }
-    else y_value = y_val;
-    if (y_value < min || y_value > max || y_len == 0 || isNaN(y_value))
+    if (y_value < min || y_value > max || y_len == 0 || isNaN(y_value)) 
     {
         alert("Введите значение Y от -3 до 5.");
         y.focus();
