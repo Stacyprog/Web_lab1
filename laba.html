@@ -20,11 +20,12 @@
                     область введите данные ниже и нажмите на кнопку.</p>
                 <p class="explanation"> (Область обозначена синим цветом на графике.) </p>
             </div>
-            <form  name='information' onSubmit="return formValidation(); "action="hit_check.php" method="get">
+            <form  name='information' onSubmit="return formValidation()" action="hit_check.php" method="get">
                 <div>
                     <div id="numberX">
                         <h2>Введите <i>X:</i></h2>
                         <p id="output">Выберите значение</p>
+                        <input type="hidden" id="x_value" name="x" value="">
                         <input type="button" name="x" onclick="changeText(this.value)" value="-5">
                         <input type="button" name="x" onclick="changeText(this.value)" value="-4">
                         <input type="button" name="x" onclick="changeText(this.value)" value="-3">
@@ -67,7 +68,7 @@
         <div id="clear">
 
         <div id="footer">
-            <input type='submit' class='submit' value='Проверить'/>
+            <input type='submit' class='submit' value='Submit'/>
         </div>
         </div>
         </div>
