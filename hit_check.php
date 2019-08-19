@@ -1,10 +1,27 @@
 <?php
+$start = microtime(true);
 error_reporting(-1);
-$x=$_GET['x'];
+$x=$_GET['clicked_x'];
 $y=$_GET['y'];
 $r=$_GET['r'];
 $result;
+$error;
 
+function validation($x, $y, $r) {
+   if (filter_var($x, FILTER_VALIDATE_FLOAT) === false) {
+           echo "Число X '$x' является неверным.\n";
+           return false;
+           }
+   if (filter_var($y, FILTER_VALIDATE_FLOAT) === false) {
+        echo "Число Y '$y' является неверным.\n";
+        return false;
+        }
+   if (filter_var($x, FILTER_VALIDATE_FLOAT) === false) {
+        echo "Число R '$r' является неверным.\n";
+        return false;
+        }
+   return true;
+}
 
 function tryXYR($x, $y, $r) {
 $result;
@@ -20,10 +37,14 @@ $result = "true";
 }
 else $result = "false";
 }
-else $result = 'false';
+else $result = "false";
 return $result;
 }
 
-$result = tryXYR($x, $y, $r);
-echo $result;
+
+if (validation($x, $y, $r))
+{
+    $result = tryXYR($x, $y, $r);
+    include 'Result.php';
+    }
 ?>
