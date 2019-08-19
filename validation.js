@@ -9,8 +9,7 @@ function formValidation()
             }
         }
     }
-    else return false;
-
+    return false;
 }
 
 function x_validation(x) {
@@ -18,7 +17,6 @@ function x_validation(x) {
     var x_value = x.value;
     if (x_len == 0 || isNaN(x_value)) {
         alert("Введите значение X");
-        x.focus();
         return false;
     }
     return true;
@@ -30,7 +28,7 @@ function y_validation(y,min,max)
     var y_len = y.value.length;
     if (y_value < min || y_value > max || y_len == 0 || isNaN(y_value))
     {
-        alert("Введите значение Y от -3 до 5.");
+        alert('Введите значение Y от ' + min + ' до ' + max);
         y.focus();
         return false;
     }
@@ -39,20 +37,13 @@ function y_validation(y,min,max)
 
 
 
-function r_validation(){
+function r_validation() {
 
-    var radios = document.getElementsByName("r");
-    var radioValue = false;
-
-    for(var i=0; i<radios.length;i++){
-        if(radios[i].checked == true){
-            radioValue = true;
-        }
-    }
-    if(!radioValue){
+    var r_len = document.information.r.value;
+    if (isNaN(r_len) || r_len == 0) {
         alert("Пожалуйста, выберите значение R");
-        radios.focus();
         return false;
+    } else {
+        return true;
     }
-    return true;
 }
