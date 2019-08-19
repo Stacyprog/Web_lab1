@@ -45,6 +45,6 @@ return $result;
 if (validation($x, $y, $r))
 {
     $result = tryXYR($x, $y, $r);
-    include 'Result.php';
+    include 'view.inc';
     }
 ?>
