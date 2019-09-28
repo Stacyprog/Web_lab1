@@ -1,4 +1,6 @@
 <?php
+error_reporting(-1);
+session_start();
 $start = microtime(true);
 error_reporting(-1);
 $x=$_GET['clicked_x'];
@@ -6,6 +8,10 @@ $y=$_GET['y'];
 $r=$_GET['r'];
 $result;
 $error;
+$time;
+$worktime;
+$hit;
+$y = str_replace(",", ".", $y);
 
 function validation($x, $y, $r) {
    if (filter_var($x, FILTER_VALIDATE_FLOAT) === false) {
@@ -41,10 +47,27 @@ else $result = "false";
 return $result;
 }
 
+function times() {
+$time;
+    date_default_timezone_set('Europe/Moscow');
+    return $time =  date('h:i:s');
+}
+
+function target($result) {
+            if ($result == "true") {
+                  return "есть";
+                  }
+                  else {
+                  return "нет";
+                  }
+}
 
 if (validation($x, $y, $r))
 {
     $result = tryXYR($x, $y, $r);
-    include 'view.inc';
+    $hit = target($result);
+    $time = times();
+    $worktime = number_format((microtime(true) - $start), 4);
+    include 'view.html';
     }
 ?>
